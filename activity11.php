@@ -19,6 +19,7 @@
             printf("%2d: ", $ln);
             echo "$line <br>";
         }
+        fclose($f);
     ?>
 </body>
 </html>
