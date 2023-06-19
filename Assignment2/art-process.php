@@ -18,16 +18,12 @@
 <main>
     <section class="results">
     <?php
-        if (!is_numeric($_POST['medium']))
-        {
-            echo("Medium must be a number");
-        }
-        elseif (!is_numeric($_POST['year']))
-        {
-          echo("Year must be a number");
-        } 
-        else 
-        {
+      if (!is_numeric($_POST['year']))
+      {
+        echo("Year must be a number");
+      } 
+      else 
+      {
       ?>
       <table>
         <caption class="results__caption">Art Work Saved</caption>
