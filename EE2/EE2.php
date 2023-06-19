@@ -10,7 +10,7 @@
     <h2>Tester for Artist Class</h2>
     <?php 
         include 'Artist.class.php';
-        $picasso = new  Artist("Pablo", "Picasso", "Malaga", "Oct 25, 1881", "Apr 8, 1973");
+        $picasso = new  Artist("Pablo", "Picasso", "Malaga", "Oct 25, 1881");
 
         echo $picasso->getLastName() . ': ';
         echo date_format($picasso->getBirthDate(), 'd M y') . ' to ';

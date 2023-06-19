@@ -3,11 +3,11 @@ class Artist {
 
     const EARLIEST_DATE = 'January 1, 1200';
     public static $artistCount = 0;
-    public $firstName;
-    public $lastName;
-    public $birthDate;
-    public $birthCity;
-    public $deathDate;
+    private $firstName;
+    private $lastName;
+    private $birthDate;
+    private $birthCity;
+    private $deathDate;
 
     function __construct($firstName, $lastName, $city, $birth, $death=null) {
         $this->setFirstName($firstName);
@@ -26,7 +26,7 @@ class Artist {
     public function getDeathDate(){ return $this->deathDate;  }
 
 public static function getArtistCount() { return self::$artistCount;}
-public function getEalistAllowedDate () {
+public function getEarliestAllowedDate () {
         return date_create(self::EARLIEST_DATE);
     }
     
@@ -37,34 +37,33 @@ public function getEalistAllowedDate () {
     public function setLastName($lastName){
         $this->lastName = $lastName;
     }
-    public function setBirthDate($birthdate){
-        $date = date_create($birthdate);
+        
+    public function setBirthCity($birthCity){
+        $this->birthCity = $birthCity;
+    }
+    public function setBirthDate($birthDate)
+    {
+        $date = date_create($birthDate);
         if (!$date) {
-            $this->birthDate = $this->getEalistAllowedDate();
-        }
-        else {
-            if ($date < $this->getEalistAllowedDate()) {
-                $date = $this->getEalistAllowedDate();
+            $this->birthDate = $this->getEarliestAllowedDate();
+        } else {
+            if ($date < $this->getEarliestAllowedDate()) {
+                $date = $this->getEarliestAllowedDate();
             }
             $this->birthDate = $date;
         }
     }
-    
-    public function setBirthCity($birthCity){
-        $this->birthCity = $birthCity;
-    }
-    public function setDeathDate($deathdate){
-        $date = date_create($deathdate);
+
+    public function setDeathDate($deathDate)
+    {
+        $date = date_create($deathDate);
         if (!$date) {
-            $this->deathDate = $this->getEalistAllowedDate();
-        }
-        else {
+            $this->deathDate = $this->getEarliestAllowedDate();
+        } else {
             if ($date > $this->getBirthDate()) {
-                $this->deathDate = $date;
+                $this->deathDate = $date;;
             }
-            else {
-                $this->deathDate = $this->getBirthDate();
-            }
+            $this->deathDate = $this->getBirthDate();
         }
     }
     public function outputAsTable (){
