@@ -22,6 +22,14 @@
       {
         echo("Year must be a number");
       } 
+      elseif (!isset($_POST['genre']))
+      {
+        echo("You must select a genre");
+      } 
+      elseif (!isset($_POST['subject']))
+      {
+        echo("You must select a subject");
+      } 
       else 
       {
       ?>
