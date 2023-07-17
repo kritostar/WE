@@ -30,25 +30,25 @@
       <legend class="form__heading">Edit Art Work Details</legend>
         <p class="form__row">
            <label>Title</label><br/>
-           <input type="text" name="title" class="form__input form__input--large"/>
+           <input type="text" name="title" required class="form__input form__input--large"/>
        </p>
        <p class="form__row">
            <label>Description</label><br/>
-           <input type="text" name="description" class="form__input form__input--large">
+           <input type="text" name="description" required class="form__input form__input--large">
        </p>            
        <p class="form__row"> 
            <label>Genre</label><br/>
-           <select name="genre" class="form__input form__select">
+           <select name="genre" required class="form__input form__select">
               <option selected="true" disabled="disabled">Choose genre</option> 
               <?php
                 showOptions($GLOBALS['genres']);
               ?>
               
            </select>
-       </p>
+       </p> 
        <p class="form__row"> 
            <label>Subject</label><br/>
-           <select name="subject" class="form__input form__select">
+           <select name="subject" required class="form__input form__select">
               <option selected="true" disabled="disabled">Choose subject</option> 
               <?php
                 showOptions($GLOBALS['subjects']);
@@ -58,15 +58,15 @@
        </p>
        <p class="form__row">    
            <label>Medium</label><br/>               
-           <input type="text" name="medium" class="form__input form__input--medium" />
+           <input type="text" name="medium" required  class="form__input form__input--medium" />
        </p>
        <p class="form__row">    
            <label>Year</label><br/>               
-           <input type="text" name="year" class="form__input form__input--small" />
+           <input type="text" name="year" required  class="form__input form__input--small" />
        </p>  
        <p class="form__row">    
            <label>Museum</label><br/>               
-           <input type="text" name="museum" class="form__input form__input--medium"/>
+           <input type="text" name="museum" required  class="form__input form__input--medium"/>
        </p>                             
 
        <div class="form__box"> 
